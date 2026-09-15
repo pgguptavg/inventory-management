@@ -102,28 +102,21 @@ export default {
 
 <style scoped>
 .filters-bar {
-  background: #f8fafc;
-  border-bottom: 1px solid #e2e8f0;
-  padding: 0.75rem 0;
-  position: sticky;
-  top: 70px;
-  z-index: 90;
+  min-width: 0;
 }
 
 .filters-container {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 2rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: var(--space-3);
+  overflow-x: auto;
 }
 
 .filters-grid {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  flex: 1;
+  gap: var(--space-3);
+  flex-wrap: wrap;
 }
 
 .filter-group {
@@ -135,31 +128,31 @@ export default {
 .filter-group label {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #64748b;
+  color: var(--slate-600);
   white-space: nowrap;
 }
 
 .filter-select {
   padding: 0.4rem 0.75rem;
-  border: 1px solid #cbd5e1;
+  border: 1px solid #cbd5e1; /* no exact token: sits between slate-300 and slate-400 */
   border-radius: 6px;
   font-size: 0.813rem;
-  color: #0f172a;
+  color: var(--slate-900);
   background: white;
   cursor: pointer;
   transition: all 0.2s;
   font-weight: 500;
-  min-width: 140px;
+  min-width: 120px;
 }
 
 .filter-select:hover {
-  border-color: #94a3b8;
+  border-color: var(--slate-400);
 }
 
 .filter-select:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: var(--indigo-600);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
 .reset-filters-btn {
@@ -168,18 +161,18 @@ export default {
   justify-content: center;
   padding: 0.4rem;
   background: white;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--slate-300);
   border-radius: 6px;
-  color: #64748b;
+  color: var(--slate-600);
   cursor: pointer;
   transition: all 0.2s;
   flex-shrink: 0;
 }
 
 .reset-filters-btn:hover:not(:disabled) {
-  background: #f8fafc;
-  border-color: #cbd5e1;
-  color: #0f172a;
+  background: var(--slate-50);
+  border-color: #cbd5e1; /* no exact token: between slate-300 and slate-400 */
+  color: var(--slate-900);
 }
 
 .reset-filters-btn:disabled {

@@ -731,48 +731,54 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-5);
 }
 
 .header-meta {
   font-size: 0.813rem;
-  color: #64748b;
+  color: var(--slate-600);
 }
 
 .kpi-section {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-5);
 }
 
 .section-title {
   font-size: 1rem;
   font-weight: 600;
-  color: #475569;
+  color: var(--slate-700);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .kpi-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-5);
 }
 
 .kpi-card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 1rem;
+  background: var(--white);
+  border: 1px solid var(--slate-300);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--card-pad);
+  transition: box-shadow .2s ease;
+}
+
+.kpi-card:hover {
+  box-shadow: var(--shadow-card-hover);
 }
 
 .kpi-header {
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--space-3);
 }
 
 .kpi-label {
   font-size: 0.813rem;
   font-weight: 600;
-  color: #64748b;
+  color: var(--slate-600);
   text-transform: uppercase;
   letter-spacing: 0.025em;
 }
@@ -780,41 +786,41 @@ export default {
 .kpi-value {
   font-size: 2rem;
   font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 0.5rem;
+  color: var(--slate-900);
+  margin-bottom: var(--space-2);
   letter-spacing: -0.025em;
 }
 
 .kpi-goal {
   font-size: 0.813rem;
-  color: #64748b;
-  margin-bottom: 0.75rem;
+  color: var(--slate-600);
+  margin-bottom: var(--space-3);
 }
 
 .kpi-progress-bar {
   width: 100%;
   height: 6px;
-  background: #f1f5f9;
+  background: var(--slate-100);
   border-radius: 3px;
   overflow: hidden;
 }
 
 .kpi-progress {
   height: 100%;
-  background: #3b82f6;
+  background: var(--indigo-600);
   border-radius: 3px;
   transition: width 0.6s ease;
 }
 
 .kpi-progress.success {
-  background: #10b981;
+  background: var(--green);
 }
 
 .charts-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-  margin-bottom: 1.5rem;
+  gap: var(--space-5);
+  margin-bottom: var(--space-5);
 }
 
 .chart-card.full-width {
@@ -822,7 +828,7 @@ export default {
 }
 
 .chart-content {
-  padding: 1rem;
+  padding: var(--space-4);
 }
 
 .donut-chart {
@@ -1044,7 +1050,7 @@ export default {
   width: 100%;
   max-width: 60px;
   min-height: 8px;
-  background: #3b82f6;
+  background: var(--indigo-600); /* revenue bars use indigo accent, not blue status color */
   border-radius: 6px 6px 0 0;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -1058,7 +1064,7 @@ export default {
 }
 
 .line-bar:hover {
-  background: #2563eb;
+  background: var(--indigo-700); /* darker indigo accent on hover */
   transform: scaleY(1.05);
 }
 
@@ -1109,7 +1115,7 @@ export default {
 }
 
 .clickable-row:hover {
-  background: #eff6ff !important;
+  background: var(--indigo-50) !important;
 }
 
 /* Tasks Card Styles */
@@ -1248,23 +1254,23 @@ export default {
 }
 
 .po-button.create {
-  background: #3b82f6;
-  color: white;
+  background: var(--indigo-600);
+  color: var(--white);
 }
 
 .po-button.create:hover {
-  background: #2563eb;
+  background: var(--indigo-700);
   transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 2px 4px rgba(99, 102, 241, 0.3);
 }
 
 .po-button.view {
-  background: #64748b;
-  color: white;
+  background: var(--slate-600);
+  color: var(--white);
 }
 
 .po-button.view:hover {
-  background: #475569;
+  background: var(--slate-700);
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(100, 116, 139, 0.3);
 }

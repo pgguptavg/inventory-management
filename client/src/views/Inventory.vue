@@ -225,33 +225,10 @@ export default {
 </script>
 
 <style scoped>
-.page-header {
-  margin-bottom: 1.5rem;
-}
-
-.page-header h2 {
-  margin-bottom: 0.25rem;
-}
-
-.page-header p {
-  color: #64748b;
-  font-size: 0.875rem;
-}
-
+/* .page-header, .card-header, .card-title inherited from global App.vue.
+   Only add the search-box layout to the shared card-header. */
 .card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.card-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #0f172a;
-  margin: 0;
+  gap: var(--space-5);
 }
 
 .search-box {
@@ -263,69 +240,58 @@ export default {
 
 .search-icon {
   position: absolute;
-  left: 0.75rem;
+  left: var(--space-3);
   width: 18px;
   height: 18px;
-  color: #94a3b8;
+  color: var(--slate-400);
   pointer-events: none;
 }
 
 .search-input {
   width: 100%;
-  padding: 0.5rem 2.5rem 0.5rem 2.5rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
+  padding: var(--space-2) 2.5rem;
+  border: 1px solid var(--slate-300);
+  border-radius: var(--radius-control);
   font-size: 0.875rem;
-  color: #0f172a;
-  background: #f8fafc;
+  color: var(--slate-900);
+  background: var(--slate-50);
   transition: all 0.2s;
 }
 
 .search-input:focus {
   outline: none;
-  border-color: #3b82f6;
-  background: white;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: var(--indigo-600);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .search-input::placeholder {
-  color: #94a3b8;
+  color: var(--slate-400);
 }
 
 .clear-search {
   position: absolute;
-  right: 0.5rem;
+  right: var(--space-2);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.25rem;
+  padding: var(--space-1);
   background: transparent;
   border: none;
   border-radius: 4px;
-  color: #94a3b8;
+  color: var(--slate-400);
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .clear-search:hover {
-  background: #e2e8f0;
-  color: #64748b;
+  background: var(--slate-300);
+  color: var(--slate-600);
 }
 
 .clear-search svg {
   width: 18px;
   height: 18px;
-}
-
-.loading,
-.error {
-  padding: 2rem;
-  text-align: center;
-  color: #64748b;
-}
-
-.error {
-  color: #ef4444;
 }
 
 .clickable-row {
@@ -334,6 +300,6 @@ export default {
 }
 
 .clickable-row:hover {
-  background: #eff6ff !important;
+  background: var(--indigo-50) !important;
 }
 </style>
