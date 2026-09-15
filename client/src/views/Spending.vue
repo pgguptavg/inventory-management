@@ -493,19 +493,19 @@ export default {
 
 <style scoped>
 .stat-change {
-  margin-top: 0.75rem;
+  margin-top: var(--space-3);
   font-size: 0.875rem;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: var(--space-1);
 }
 
 .stat-change.positive {
-  color: #059669;
+  color: var(--green);
 }
 
 .stat-change.negative {
-  color: #dc2626;
+  color: var(--red);
 }
 
 .change-icon {
@@ -513,21 +513,17 @@ export default {
   font-size: 1rem;
 }
 
-.chart-card {
-  margin-bottom: 1.75rem;
-}
-
 .chart-legend {
   display: flex;
-  gap: 1.5rem;
+  gap: var(--space-5);
   font-size: 0.875rem;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  color: #64748b;
+  gap: var(--space-2);
+  color: var(--slate-600);
 }
 
 .legend-dot {
@@ -536,7 +532,7 @@ export default {
   border-radius: 3px;
 }
 
-.legend-dot.procurement { background: #3b82f6; }
+.legend-dot.procurement { background: var(--blue); } /* categorical color, uses --blue status token */
 .legend-dot.operational { background: #8b5cf6; }
 .legend-dot.labor { background: #10b981; }
 .legend-dot.overhead { background: #f59e0b; }
@@ -546,26 +542,26 @@ export default {
 .stats-grid-finance {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  gap: var(--space-5);
+  margin-bottom: var(--space-5);
 }
 
 .revenue-card {
-  border-left: 4px solid #0f172a;
+  border-left: 3px solid var(--slate-900);
 }
 
 .cost-card {
-  border-left: 4px solid #ef4444;
+  border-left: 3px solid var(--red);
 }
 
 .profit-card {
-  border-left: 4px solid #3b82f6;
+  border-left: 3px solid var(--indigo-600);
 }
 
 .stat-meta {
-  margin-top: 0.5rem;
+  margin-top: var(--space-2);
   font-size: 0.813rem;
-  color: #64748b;
+  color: var(--slate-600);
 }
 
 .bar-group-revenue {
@@ -610,12 +606,12 @@ export default {
 }
 
 .chart-container {
-  padding: 1.5rem 0;
+  padding: var(--space-5) 0;
 }
 
 .bar-chart {
   display: flex;
-  gap: 1.5rem;
+  gap: var(--space-5);
   height: 350px;
 }
 
@@ -623,10 +619,10 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-right: 1rem;
+  padding-right: var(--space-4);
   font-size: 0.75rem;
-  color: #94a3b8;
-  border-right: 1px solid #e2e8f0;
+  color: var(--slate-400);
+  border-right: 1px solid var(--slate-300);
 }
 
 .chart-area {
@@ -676,7 +672,7 @@ export default {
   border-radius: 6px 6px 0 0;
 }
 
-.bar-segment.procurement { background: #3b82f6; }
+.bar-segment.procurement { background: var(--blue); } /* categorical color, uses --blue status token */
 .bar-segment.operational { background: #8b5cf6; }
 .bar-segment.labor { background: #10b981; }
 .bar-segment.overhead { background: #f59e0b; }
@@ -686,22 +682,22 @@ export default {
 }
 
 .bar-label {
-  margin-top: 0.5rem;
+  margin-top: var(--space-2);
   font-size: 0.75rem;
   font-weight: 600;
-  color: #64748b;
+  color: var(--slate-600);
 }
 
 .two-column-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 1.75rem;
+  gap: var(--space-5);
 }
 
 .category-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-5);
 }
 
 .category-item {
@@ -718,26 +714,26 @@ export default {
 
 .category-name {
   font-weight: 600;
-  color: #0f172a;
+  color: var(--slate-900);
 }
 
 .category-amount {
   font-weight: 700;
-  color: #2563eb;
+  color: var(--indigo-600);
   font-size: 1.125rem;
 }
 
 .category-bar-container {
   width: 100%;
   height: 8px;
-  background: #f1f5f9;
+  background: var(--slate-100);
   border-radius: 4px;
   overflow: hidden;
 }
 
 .category-bar {
   height: 100%;
-  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+  background: var(--indigo-600);
   border-radius: 4px;
   transition: width 0.6s ease;
 }
@@ -749,7 +745,7 @@ export default {
 }
 
 .percentage {
-  color: #64748b;
+  color: var(--slate-600);
 }
 
 .change {
@@ -757,11 +753,11 @@ export default {
 }
 
 .change.positive {
-  color: #059669;
+  color: var(--green);
 }
 
 .change.negative {
-  color: #dc2626;
+  color: var(--red);
 }
 
 .transactions-card {
@@ -769,81 +765,48 @@ export default {
   flex-direction: column;
 }
 
+/* Table styles (sticky header, padding, hover) inherited from global App.vue */
 .transactions-table-container {
   overflow-y: auto;
   max-height: 400px;
-}
-
-.transactions-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.transactions-table thead {
-  position: sticky;
-  top: 0;
-  background: #f8fafc;
-  z-index: 1;
-}
-
-.transactions-table th {
-  text-align: left;
-  padding: 0.625rem 0.75rem;
-  font-weight: 600;
-  color: #475569;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-bottom: 1px solid #e2e8f0;
 }
 
 .transactions-table th.text-right {
   text-align: right;
 }
 
-.transactions-table td {
-  padding: 0.75rem 0.75rem;
-  border-bottom: 1px solid #f1f5f9;
-  font-size: 0.875rem;
-}
-
 .transactions-table tbody tr {
   cursor: pointer;
-  transition: background-color 0.15s ease;
-}
-
-.transactions-table tbody tr:hover {
-  background: #f8fafc;
 }
 
 .transactions-table tbody tr.clickable-row:hover {
-  background: #eff6ff;
+  background: var(--indigo-50);
 }
 
 .transaction-id {
-  color: #64748b;
+  color: var(--slate-600);
   font-weight: 500;
   font-family: 'Monaco', 'Courier New', monospace;
   font-size: 0.813rem;
 }
 
 .transaction-description {
-  color: #0f172a;
+  color: var(--slate-900);
   font-weight: 500;
 }
 
 .transaction-vendor {
-  color: #64748b;
+  color: var(--slate-600);
 }
 
 .transaction-date {
-  color: #64748b;
+  color: var(--slate-600);
   font-size: 0.813rem;
 }
 
 .transaction-amount {
   font-weight: 700;
-  color: #0f172a;
+  color: var(--slate-900);
 }
 
 .text-right {
